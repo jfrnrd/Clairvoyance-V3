@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clairvoyance - Complete Strategy Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .logo {
+            font-size: 48px;
+            font-weight: 600;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+            color: #000000;
+        }
+        
+        .tagline {
+            font-size: 20px;
+            color: #666666;
+            font-weight: 300;
+            font-style: italic;
+        }
+        
+        /* Concept Block */
+        .concept-block {
+            border: 2px solid #000000;
+            padding: 40px;
+            margin-bottom: 60px;
+            background: #fafafa;
+        }
+        
+        .concept-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 30px;
+            align-items: center;
+            margin-top: 30px;
+        }
+        
+        .comparison-side {
+            background: #ffffff;
+            border: 1px solid #000000;
+            padding: 20px;
+        }
+        
+        .comparison-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #999999;
+            margin-bottom: 10px;
+        }
+        
+        .comparison-text {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .vs-divider {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        /* Process Flow */
+        .process-section {
+            margin-bottom: 80px;
+        }
+        
+        .section-header {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .flow-diagram {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        
+        .flow-step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            border: 1px solid #000000;
+            border-bottom: none;
+        }
+        
+        .flow-step:last-child {
+            border-bottom: 1px solid #000000;
+        }
+        
+        .step-number-box {
+            background: #000000;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 600;
+        }
+        
+        .step-content {
+            padding: 20px 30px;
+            background: #ffffff;
+        }
+        
+        .step-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .step-desc {
+            font-size: 14px;
+            color: #666666;
+            line-height: 1.5;
+        }
+        
+        /* Features Grid */
+        .features-section {
+            margin-bottom: 80px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1px;
+            background: #000000;
+            border: 1px solid #000000;
+        }
+        
+        .feature-box {
+            background: #ffffff;
+            padding: 25px;
+        }
+        
+        .feature-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+        
+        .feature-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .feature-text {
+            font-size: 13px;
+            color: #666666;
+            line-height: 1.5;
+        }
+        
+        /* Architecture Diagram */
+        .architecture-section {
+            margin-bottom: 80px;
+        }
+        
+        .architecture-layers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: #000000;
+            border: 1px solid #000000;
+        }
+        
+        .arch-layer {
+            background: #ffffff;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .arch-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .arch-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .arch-items {
+            text-align: left;
+        }
+        
+        .arch-item {
+            font-size: 13px;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .arch-item:last-child {
+            border-bottom: none;
+        }
+        
+        /* Money Flow Diagram */
+        .flow-visual {
+            border: 2px solid #000000;
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .flow-nodes {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .flow-node {
+            flex: 1;
+            min-width: 150px;
+            background: #000000;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .node-label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .node-desc {
+            font-size: 11px;
+            color: #cccccc;
+        }
+        
+        .flow-arrow {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        
+        /* Risks Grid */
+        .risks-section {
+            margin-bottom: 80px;
+        }
+        
+        .risks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .risk-card {
+            border: 1px solid #000000;
+            padding: 20px;
+            background: #ffffff;
+        }
+        
+        .risk-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .risk-title {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .risk-text {
+            font-size: 13px;
+            color: #666666;
+            line-height: 1.5;
+        }
+        
+        /* Getting Started */
+        .getting-started {
+            border: 2px solid #000000;
+            padding: 40px;
+            background: #fafafa;
+        }
+        
+        .steps-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .start-step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #ffffff;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .start-number {
+            background: #000000;
+            color: #ffffff;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        
+        .start-text {
+            font-size: 13px;
+        }
+        
+        /* Rewards Breakdown */
+        .rewards-breakdown {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: #000000;
+            border: 1px solid #000000;
+            margin-bottom: 60px;
+        }
+        
+        .reward-item {
+            background: #ffffff;
+            padding: 25px;
+        }
+        
+        .reward-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .reward-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .reward-desc {
+            font-size: 13px;
+            color: #666666;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .vs-divider {
+                transform: rotate(90deg);
+            }
+            
+            .architecture-layers {
+                grid-template-columns: 1fr;
+            }
+            
+            .flow-nodes {
+                flex-direction: column;
+            }
+            
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">Clairvoyance</div>
+            <div class="tagline">Complete Guide to Combinatorial Prediction Markets</div>
+        </div>
+        
+        <!-- Concept Explanation -->
+        <div class="concept-block">
+            <div class="concept-title">What Is Clairvoyance?</div>
+            <p style="text-align: center; font-size: 15px; color: #666666; margin-bottom: 30px;">
+                A prediction market platform where you bet on multiple outcomes simultaneously
+            </p>
+            
+            <div class="comparison-grid">
+                <div class="comparison-side">
+                    <div class="comparison-label">Regular Prediction Markets</div>
+                    <div class="comparison-text">
+                        Will Bitcoin reach $100,000? <br><strong>Yes or No.</strong>
+                    </div>
+                </div>
+                
+                <div class="vs-divider">VS</div>
+                
+                <div class="comparison-side">
+                    <div class="comparison-label">Clairvoyance</div>
+                    <div class="comparison-text">
+                        Bitcoin reaches $100K <strong>AND</strong> Ethereum processes more transactions than Bitcoin <strong>AND</strong> gas fees drop below 10 gwei. <br><br>
+                        <em>All three must happen to win.</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Process Flow -->
+        <div class="process-section">
+            <div class="section-header">How It Works</div>
+            
+            <div class="flow-diagram">
+                <div class="flow-step">
+                    <div class="step-number-box">1</div>
+                    <div class="step-content">
+                        <div class="step-title">Choose Your Outcomes</div>
+                        <div class="step-desc">Select 2-10 different events: sports results, crypto prices, political elections, weather events, company earnings</div>
+                    </div>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="step-number-box">2</div>
+                    <div class="step-content">
+                        <div class="step-title">System Calculates Odds</div>
+                        <div class="step-desc">Automated market maker prices your combination based on individual event probability and correlation between events</div>
+                    </div>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="step-number-box">3</div>
+                    <div class="step-content">
+                        <div class="step-title">Place Your Bet</div>
+                        <div class="step-desc">Deposit cryptocurrency into smart contract escrow. No person controls this money—only code</div>
+                    </div>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="step-number-box">4</div>
+                    <div class="step-content">
+                        <div class="step-title">Receive Position NFT</div>
+                        <div class="step-desc">Your bet becomes a tradeable digital token. Sell it to others or hold until resolution</div>
+                    </div>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="step-number-box">5</div>
+                    <div class="step-content">
+                        <div class="step-title">Wait for Resolution</div>
+                        <div class="step-desc">Oracles verify real-world events and report them to the blockchain</div>
+                    </div>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="step-number-box">6</div>
+                    <div class="step-content">
+                        <div class="step-title">Collect Winnings</div>
+                        <div class="step-desc">If all outcomes happen, smart contract automatically pays you. If one fails, you lose your bet</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Core Features -->
+        <div class="features-section">
+            <div class="section-header">Core Features</div>
+            
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-name">Combo Builder Interface</div>
+                    <div class="feature-text">Drag and drop outcomes to build your bet. See odds update in real time as you add or remove events</div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">⚙️</div>
+                    <div class="feature-name">Automated Market Maker</div>
+                    <div class="feature-text">Pricing engine that determines fair odds for any combination. Always available as counterparty</div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">💎</div>
+                    <div class="feature-name">Position NFTs</div>
+                    <div class="feature-text">Every bet is tokenized. Sell it, split it, or use as collateral in other financial applications</div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-name">Partial Resolution</div>
+                    <div class="feature-text">Receive payments as events resolve. Trade your position at updated odds before everything settles</div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">🔮</div>
+                    <div class="feature-name">Oracle Network</div>
+                    <div class="feature-text">Decentralized oracles stake tokens to vouch for accuracy. False information results in slashed tokens</div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">🔗</div>
+                    <div class="feature-name">Multi-Chain Support</div>
+                    <div class="feature-text">Works on Ethereum, Base, and Arbitrum. Shared liquidity across all chains</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Unique Features -->
+        <div class="features-section">
+            <div class="section-header">What Makes Clairvoyance Different</div>
+            
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">🧠</div>
+                    <div class="feature-name">Correlation Mining</div>
+                    <div class="feature-text">Earn bonus tokens by discovering correlations others haven't noticed. Rewards insight and research</div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">🎲</div>
+                    <div class="feature-name">Fractal Markets</div>
+                    <div class="feature-text">Create markets within markets. Others can bet on specific aspects within your position</div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-name">Flash Combos</div>
+                    <div class="feature-text">24-hour rapid resolution for time-sensitive events. Perfect for sports or breaking news</div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">✂️</div>
+                    <div class="feature-name">Position Splitting</div>
+                    <div class="feature-text">Break combinations into pieces. Sell some outcomes while keeping others to hedge or take profits</div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">📈</div>
+                    <div class="feature-name">Meta-Markets</div>
+                    <div class="feature-text">Bet on market behavior itself. Trade based on what probability other markets will reach</div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">💰</div>
+                    <div class="feature-name">Dynamic Liquidity Incentives</div>
+                    <div class="feature-text">More complex combinations earn higher rewards. 10-event combos pay 10x rewards</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Rewards System -->
+        <div class="features-section">
+            <div class="section-header">Reward & Incentive System</div>
+            
+            <div class="rewards-breakdown">
+                <div class="reward-item">
+                    <div class="reward-icon">🎯</div>
+                    <div class="reward-name">Trading Profits</div>
+                    <div class="reward-desc">Win money if your combination is correct. Payout depends on odds when you placed your bet. Riskier combinations pay more</div>
+                </div>
+                
+                <div class="reward-item">
+                    <div class="reward-icon">💧</div>
+                    <div class="reward-name">Liquidity Provider Fees</div>
+                    <div class="reward-desc">Deposit tokens into pools. Earn fees when others trade. Complex markets pay higher fees</div>
+                </div>
+                
+                <div class="reward-item">
+                    <div class="reward-icon">🧠</div>
+                    <div class="reward-name">Correlation Discovery</div>
+                    <div class="reward-desc">Earn CLRV tokens for identifying valuable correlations first. Paid from protocol treasury</div>
+                </div>
+                
+                <div class="reward-item">
+                    <div class="reward-icon">🔮</div>
+                    <div class="reward-name">Oracle Resolution Fees</div>
+                    <div class="reward-desc">Stake tokens to become a resolver. Earn fees for accurate reports. Lose collateral for false information</div>
+                </div>
+                
+                <div class="reward-item">
+                    <div class="reward-icon">🏛️</div>
+                    <div class="reward-name">Governance Tokens</div>
+                    <div class="reward-desc">Active users earn CLRV tokens. Vote on protocol changes and earn share of platform fees</div>
+                </div>
+                
+                <div class="reward-item">
+                    <div class="reward-icon">👥</div>
+                    <div class="reward-name">Referral Bonuses</div>
+                    <div class="reward-desc">Bring new users and earn percentage of their trading fees. Incentivizes community growth</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Money Flow -->
+        <div class="flow-visual">
+            <div class="section-header">Money Flow Through the System</div>
+            
+            <div class="flow-nodes">
+                <div class="flow-node">
+                    <div class="node-label">Traders Deposit</div>
+                    <div class="node-desc">Tokens into escrow</div>
+                </div>
+                
+                <div class="flow-arrow">→</div>
+                
+                <div class="flow-node">
+                    <div class="node-label">Trading Fees</div>
+                    <div class="node-desc">Split between LPs and treasury</div>
+                </div>
+                
+                <div class="flow-arrow">→</div>
+                
+                <div class="flow-node">
+                    <div class="node-label">Liquidity Pools</div>
+                    <div class="node-desc">Enable AMM to function</div>
+                </div>
+                
+                <div class="flow-arrow">→</div>
+                
+                <div class="flow-node">
+                    <div class="node-label">Resolution</div>
+                    <div class="node-desc">Winners paid automatically</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Technology Architecture -->
+        <div class="architecture-section">
+            <div class="section-header">Technology & Infrastructure</div>
+            
+            <div class="architecture-layers">
+                <div class="arch-layer">
+                    <div class="arch-icon">⛓️</div>
+                    <div class="arch-title">Blockchain Layer</div>
+                    <div class="arch-items">
+                        <div class="arch-item">Solidity Smart Contracts</div>
+                        <div class="arch-item">ZK-Rollups for Scaling</div>
+                        <div class="arch-item">Ethereum Settlement</div>
+                        <div class="arch-item">LayerZero Cross-chain</div>
+                    </div>
+                </div>
+                
+                <div class="arch-layer">
+                    <div class="arch-icon">🔮</div>
+                    <div class="arch-title">Oracle & Data</div>
+                    <div class="arch-items">
+                        <div class="arch-item">Chainlink Price Feeds</div>
+                        <div class="arch-item">The Graph Protocol</div>
+                        <div class="arch-item">Decentralized Resolvers</div>
+                        <div class="arch-item">Real-time Indexing</div>
+                    </div>
+                </div>
+                
+                <div class="arch-layer">
+                    <div class="arch-icon">💻</div>
+                    <div class="arch-title">Frontend</div>
+                    <div class="arch-items">
+                        <div class="arch-item">React Interface</div>
+                        <div class="arch-item">Web3.js Integration</div>
+                        <div class="arch-item">Wallet Connection</div>
+                        <div class="arch-item">No Account Required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Risks -->
+        <div class="risks-section">
+            <div class="section-header">Risks & Considerations</div>
+            
+            <div class="risks-grid">
+                <div class="risk-card">
+                    <div class="risk-icon">💧</div>
+                    <div class="risk-title">Liquidity Risk</div>
+                    <div class="risk-text">Complex combinations may have few traders. You might not be able to sell your position at a fair price</div>
+                </div>
+                
+                <div class="risk-card">
+                    <div class="risk-icon">⚠️</div>
+                    <div class="risk-title">Smart Contract Risk</div>
+                    <div class="risk-text">Bugs in code could result in loss of funds. Only deposit what you can afford to lose</div>
+                </div>
+                
+                <div class="risk-card">
+                    <div class="risk-icon">🔮</div>
+                    <div class="risk-title">Oracle Manipulation</div>
+                    <div class="risk-text">Compromised oracles could report false outcomes. Multiple oracles and slashing minimize this risk</div>
+                </div>
+                
+                <div class="risk-card">
+                    <div class="risk-icon">⚖️</div>
+                    <div class="risk-title">Regulatory Uncertainty</div>
+                    <div class="risk-text">Prediction markets may face legal restrictions. Users must comply with local laws</div>
+                </div>
+                
+                <div class="risk-card">
+                    <div class="risk-icon">🧩</div>
+                    <div class="risk-title">Complexity Risk</div>
+                    <div class="risk-text">Combinatorial betting is harder to understand. Users may make mistakes in constructing positions</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Why It Matters -->
+        <div class="concept-block" style="background: #ffffff; border: 2px solid #000000;">
+            <div class="concept-title">Why Combinatorial Markets Matter</div>
+            <div style="max-width: 800px; margin: 20px auto; font-size: 14px; color: #666666; line-height: 1.8;">
+                <p style="margin-bottom: 15px;">
+                    <strong style="color: #000000;">Real world complexity:</strong> Events don't happen in isolation—they influence each other. Betting on combinations lets you express nuanced views about how the world works.
+                </p>
+                <p style="margin-bottom: 15px;">
+                    <strong style="color: #000000;">Better information aggregation:</strong> Markets reveal not just what might happen, but how different events relate. Valuable for decision makers, researchers, and businesses.
+                </p>
+                <p style="margin-bottom: 15px;">
+                    <strong style="color: #000000;">Market efficiency:</strong> Express your complete thesis in one position instead of fragmented liquidity across multiple simple markets.
+                </p>
+                <p>
+                    <strong style="color: #000000;">Higher engagement:</strong> Building complex positions requires thought and analysis. Larger potential payoffs for taking on more risk.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Getting Started -->
+        <div class="getting-started">
+            <div class="section-header">Getting Started</div>
+            
+            <div class="steps-list">
+                <div class="start-step">
+                    <div class="start-number">1</div>
+                    <div class="start-text">Connect Web3 wallet (MetaMask)</div>
+                </div>
+                
+                <div class="start-step">
+                    <div class="start-number">2</div>
+                    <div class="start-text">Deposit USDC, ETH, or accepted tokens</div>
+                </div>
+                
+                <div class="start-step">
+                    <div class="start-number">3</div>
+                    <div class="start-text">Browse markets or build combo position</div>
+                </div>
+                
+                <div class="start-step">
+                    <div class="start-number">4</div>
+                    <div class="start-text">Review odds and potential payout</div>
+                </div>
+                
+                <div class="start-step">
+                    <div class="start-number">5</div>
+                    <div class="start-text">Confirm transaction and receive NFT</div>
+                </div>
+                
+                <div class="start-step">
+                    <div class="start-number">6</div>
+                    <div class="start-text">Monitor positions in dashboard</div>
+                </div>
+                
+                <div class="start-step">
+                    <div class="start-number">7</div>
+                    <div class="start-text">Trade on secondary markets or hold</div>
+                </div>
+                
+                <div class="start-step">
+                    <div class="start-number">8</div>
+                    <div class="start-text">Collect winnings automatically</div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
